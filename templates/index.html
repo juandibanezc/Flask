@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 align="center">Lista de Peliculas</h1>
+{% for pelicula in datos %}
+<section>
+  <a href="/detalles/{{ pelicula.id }}">
+    <img src="https://image.tmdb.org/t/p/w500/{{ pelicula.poster_path }}" style="width:210px;height:300px;" />
+  </a>
+  <h2>{{ pelicula.title }}</h2>
+  <p> {{ pelicula.release_date }}</p>
+</section>
+{% endfor %}
+{% endblock %}

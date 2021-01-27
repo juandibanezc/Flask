@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+  <h1>Detalles</h1>
+  <section>
+    {% if movie %}
+    <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" style="width:210px;height:300px;" />
+    <h2>{{ movie.title }}</h2>
+    <p>Fecha de estreno: {{ movie.release_date }}</p>
+    <p class="movie-popularity">Popularidad: {{ movie.popularity }}</p> 
+    <p>Idioma: {{ movie.original_language }}</p>
+    <p class="movie-overview">Resumen: {{ movie.overview }}</p>
+    {% endif %}
+  </section>
+</main>
+<button><a href="/">Volver al home</a></button>
+{% endblock %}
